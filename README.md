@@ -1,5 +1,12 @@
+# Yelp Roulette
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+## Table of Contents
+* [Getting Started](#getting-started)
+    * [Build Notes](#build-notes)
+        * [Learn More](#learn-more)
+        * [Deploy on Vercel](#deploy-on-vercel)
 ## Getting Started
 Setup the git repo and boilerplate
 '''
@@ -10,7 +17,7 @@ git remote add origin
 '''
 
 
-First, run the development server:
+Then run the development server:
 ```
 npm run dev
 ```
@@ -19,7 +26,16 @@ npm run dev
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+---
+
+### Build Notes
+Created Components section to separate 
+* dropdown selection 
+* check query params - useRouter hook used to push "/" route if params are empty
+* zip code inputs - uses getStaticProps
+
+---
+#### Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
@@ -28,7 +44,7 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+#### Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
