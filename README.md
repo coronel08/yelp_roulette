@@ -34,7 +34,8 @@ Created Components section to separate
 * check query params - useRouter hook used to push "/" route if params are empty
 * zip code inputs - uses getStaticProps
 Static props Example
-'''
+
+```
 export const getStaticProps = async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
     const json = await res.json()
@@ -43,7 +44,7 @@ export const getStaticProps = async () => {
         props: { json }
     }
 }
-'''
+```
 
 ---
 #### Learn More
