@@ -26,6 +26,7 @@ export default function Spin(props) {
     return (
         <div className={styles.container}>
             <main className={styles.main}>
+                <p>Length of list {businesses.length}</p>
                 {!timer ?
                     <>
                         <SpinnerRoundOutlined size="300px" color="#e78fb3" />
@@ -47,7 +48,7 @@ export default function Spin(props) {
 
 export async function getServerSideProps({ query }) {
     const API_KEY = "HF3aj20l--aSTBbFhVxM2wk1e8YEYz2i8Y-tv2D3BEc1FRs8kUaOGf15-PsesfiokIFNUGy4Xi701dxR28YfuLq3XzRSOHwBQhHuyHPBFJomuykvdTRBuEmxqw2fYHYx";
-    const url = `https://api.yelp.com/v3/businesses/search?term=${query.term}&location=${query.location}`
+    const url = `https://api.yelp.com/v3/businesses/search?term=${query.term}&location=${query.location}&limit=40`
     const res = await fetch(url, { 
         headers: { 
             'Authorization': `Bearer ${API_KEY}`,
