@@ -5,8 +5,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Table of Contents
 * [Getting Started](#getting-started)
     * [Build Notes](#build-notes)
-        * [Learn More](#learn-more)
-        * [Deploy on Vercel](#deploy-on-vercel)
+        * [Static Props](#static-props)
+        * [Server Side Props](#server-side-props)
+* [Learn More](#learn-more)
+    * [Deploy on Vercel](#deploy-on-vercel)
 ## Getting Started
 Setup the git repo and boilerplate
 '''
@@ -33,8 +35,15 @@ Created Components section to separate
 * dropdown selection 
 * check query params - useRouter hook used to push "/" route if params are empty
 * zip code inputs - uses getStaticProps
-Static props Example
 
+
+Then created pages for spin and Food
+* food - useContext carries over postal code from home page, then useRouter to push category/place into spin page
+* spin - uses getServerSideProps to get term and location and return props for spin function. 
+
+#### Static Props
+
+Example
 ```
 export const getStaticProps = async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
@@ -46,8 +55,12 @@ export const getStaticProps = async () => {
 }
 ```
 
+#### Server Side Props
+
+
+
 ---
-#### Learn More
+# Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
@@ -56,7 +69,7 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-#### Deploy on Vercel
+## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
