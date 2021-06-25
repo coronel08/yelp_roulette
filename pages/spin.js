@@ -26,10 +26,9 @@ export default function Spin(props) {
     return (
         <div className={styles.container}>
             <main className={styles.main}>
-                <p>Length of list {businesses.length}</p>
                 {!timer ?
                     <>
-                        <SpinnerRoundOutlined size="300px" color="#a51937" />
+                        <SpinnerRoundOutlined size="300px" color="#e78fb3" />
                         <h2 className={styles.title}>Choosing a Place</h2>
                     </>
                     :
@@ -37,7 +36,7 @@ export default function Spin(props) {
                         <h1 className={styles.title}>
                             {businesses[getRandomIndex(businesses.length)]}
                         </h1>
-                        <button onClick={() => reRoll()}>Reroll</button>
+                        <button className={styles.button} onClick={() => reRoll()}>Reroll</button>
                     </>
                 }
             </main>
