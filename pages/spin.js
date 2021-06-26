@@ -47,7 +47,7 @@ export default function Spin(props) {
 
 
 export async function getServerSideProps({ query }) {
-    const API_KEY = "HF3aj20l--aSTBbFhVxM2wk1e8YEYz2i8Y-tv2D3BEc1FRs8kUaOGf15-PsesfiokIFNUGy4Xi701dxR28YfuLq3XzRSOHwBQhHuyHPBFJomuykvdTRBuEmxqw2fYHYx";
+    const API_KEY = process.env.API_KEY
     const url = `https://api.yelp.com/v3/businesses/search?term=${query.term}&location=${query.location}&limit=40`
     const res = await fetch(url, { 
         headers: { 
@@ -55,7 +55,7 @@ export async function getServerSideProps({ query }) {
             'Content-Type': 'application/json'
         }
     })
-
+    
     const json = await res.json()
     return {
         props: {

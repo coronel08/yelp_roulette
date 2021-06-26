@@ -8,7 +8,7 @@ export default function ZipCodeInput(props) {
 
 
 export async function getStaticProps(context) {
-    const API_KEY = "HF3aj20l--aSTBbFhVxM2wk1e8YEYz2i8Y-tv2D3BEc1FRs8kUaOGf15-PsesfiokIFNUGy4Xi701dxR28YfuLq3XzRSOHwBQhHuyHPBFJomuykvdTRBuEmxqw2fYHYx";
+    const API_KEY = process.env.API_KEY;
     let url = "https://api.yelp.com/v3/businesses/search?term=delis&latitude=37.786882&longitude=-122.399972"
     const res = await fetch(url, {
         headers: {
