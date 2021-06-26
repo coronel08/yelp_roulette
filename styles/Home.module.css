@@ -47,6 +47,10 @@
 
 }
 
+.image{
+  display: block;
+}
+
 .select {
   font-size: 2rem;
   background-color: #fff3ec;
@@ -58,10 +62,12 @@
   text-decoration: none;
 }
 
+.title:hover,
 .title a:hover,
 .title a:focus,
 .title a:active {
   text-decoration: underline;
+  color: #0070f3;
 }
 
 .title {
@@ -116,5 +122,9 @@
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+
+  .main {
+    padding: 5px;
   }
 }

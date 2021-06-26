@@ -1,3 +1,4 @@
+import Image from "next/image"
 import styles from '../styles/Home.module.css'
 import {useState, useEffect} from 'react'
 import {SpinnerRoundOutlined} from 'spinners-react'
@@ -6,6 +7,8 @@ import {useRouter} from 'next/router'
 export default function Spin(props) {
     // API returns data under businesses from getServerSideProps
     const businesses = props.json.businesses.map(business => business.name);
+    const urls = props.json.businesses.map(business => business.url)
+    const photos = props.json.businesses.map(business => business.image_url)
     const getRandomIndex = (listLength) => Math.floor(Math.random() * listLength)
     const [timer, setTime] = useState(false)
     const [reroll, setReroll] = useState(false)
@@ -23,6 +26,8 @@ export default function Spin(props) {
         }
     }
 
+    const foodIndex = getRandomIndex(businesses.length)
+
     return (
         <div className={styles.container}>
             <main className={styles.main}>
@@ -34,9 +39,10 @@ export default function Spin(props) {
                     </>
                     :
                     <>
-                        <h1 className={styles.title}>
-                            {businesses[getRandomIndex(businesses.length)]}
-                        </h1>
+                        <Image src={photos[foodIndex]} alt="" width={500} height={500} className={styles.image}/>
+                        <a className={styles.title} href={urls[foodIndex]} target="_blank" rel="noreferrer">
+                            {businesses[foodIndex]}
+                        </a>
                         <button className={styles.button} onClick={() => reRoll()}>Reroll</button>
                     </>
                 }
