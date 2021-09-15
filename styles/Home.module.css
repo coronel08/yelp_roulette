@@ -29,6 +29,7 @@
   margin-top: 15px;
   box-shadow: 5px 3px 5px #e78fb3;
   height: 5rem;
+  max-width: 80%;
 }
 
 .input:focus{
