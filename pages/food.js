@@ -21,10 +21,12 @@ export default function Food() {
     return (
         <div className={styles.inputWrapper}>
             <select className={styles.input} onChange={e => updatePlace(e.target.value)}>
-                <option value="">Select an Category</option>
-                <option value="Drinks">Drinks</option>
-                <option value="Coffee">Coffee</option>
+                <option value="">Select Category</option>
                 <option value="Burgers">Burgers</option>
+                <option value="Coffee">Coffee</option>
+                <option value="Dispensary">Dispensary</option>
+                <option value="Drinks">Drinks</option>
+                <option value="Pizza">Pizza</option>
             </select>
             {error ? <p>Select Something!!</p> : null}
             <button className={styles.button} onClick={() => handleSelect(place)}>Submit</button>
