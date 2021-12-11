@@ -1,36 +1,32 @@
-.container {
-  min-height: 100vh;
-  max-width: 100v;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #55423d;
+/* Title front page */
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  color: white;
+  text-align: center;
+  margin-bottom:3rem;
 }
 
-.main {
-  padding: 5rem 0;
-  flex: 1;
+/* Input and Selection CSS */
+.inputWrapper{
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  margin: 0 5px;
 }
-
 
 .input {
-  background-color: #fff3ec;
-  color: #271c19;
+  background-color: white;
+  color: black;
   font-size: 1.5rem;
   text-align: center;
   border: none;
   padding: 5px;
-  margin-top: 15px;
-  box-shadow: 5px 3px 5px #e78fb3;
+  margin-top: 20px;
   height: 5rem;
-  max-width: 60%;
+  width: 600px;
+  border-radius: 1rem;
 }
 
 .input:focus{
@@ -38,95 +34,65 @@
 }
 
 .button {
-  background-color: #ffc0ad;
+  background-color: #457B9D;
   color: #271c19;
-  padding: 10px 20px;
-  margin-top: 20px;
-  font-size: 1.5rem;
+  padding: 10px 15px;
+  margin: 20px 8px 8px 8px ;
+  font-size: 1.3rem;
+  font-weight: 500;
   border: none;
-  border-radius: 10%;
+  border-radius: 10rem;
   cursor: pointer;
-
+  border: 2px solid #0e1a22;
 }
 
-.image{
-  display: block;
+/* Yelp results section */
+.results{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.select {
-  font-size: 2rem;
-  background-color: #fff3ec;
-  color: #271c19;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title:hover,
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-  color: #0070f3;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
+.resTitle{
   font-size: 4rem;
-  color: #fffffe;
+  color: white;
   text-align: center;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+.resTitle:hover,
+.resTitle:focus,
+.resTitle:active {
+  text-decoration: underline;
+  color: #1D3557;
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-  margin-top: 3rem;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-.footer {
-  width: 100%;
-  height: 100px;
-  border-top: 1px solid #eaeaea;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+.imgWrapper{
+  display: block;
+  padding:5px 10px;
+  position: relative;
+  height: 550px;
+  overflow: hidden;
 }
 
 
+/* Media queries */
 @media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+  .imgWrapper{
+    height: 300px;
+
   }
 
-  .main {
-    padding: 5px;
+  .input{
+    width: 70%;
   }
+
+  .resTitle{
+    font-size: 2rem;
+  }
+
+  .button{
+    margin: 8px;
+
+  }
+
 }

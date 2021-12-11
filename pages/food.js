@@ -5,10 +5,10 @@ import { useRouter } from "next/router"
 
 export default function Food() {
     const yelpContext = useYelpContext()
-    const {zipcode, place, updatePlace} = yelpContext
+    const { zipcode, place, updatePlace } = yelpContext
     const [error, setError] = useState(false)
     const router = useRouter()
-    
+
     const handleSelect = (value) => {
         if (value !== "") {
             setError(false)
@@ -19,17 +19,15 @@ export default function Food() {
     }
 
     return (
-        <div className={styles.container}>
-            <main className={styles.main}>
-                <select id="" className={styles.select} name="" onChange={e => updatePlace(e.target.value)}>
-                    <option value="">Select your Category</option>
-                    <option value="Drinks">Drinks</option>
-                    <option value="Coffee">Coffee</option>
-                    <option value="Burgers">Burgers</option>
-                </select>
-                {error ? <p>Select Something!!</p> : null}
-                <button className={styles.button} onClick={() => handleSelect(place)}>Submit</button>
-            </main>
+        <div className={styles.inputWrapper}>
+            <select className={styles.input} onChange={e => updatePlace(e.target.value)}>
+                <option value="">Select an Category</option>
+                <option value="Drinks">Drinks</option>
+                <option value="Coffee">Coffee</option>
+                <option value="Burgers">Burgers</option>
+            </select>
+            {error ? <p>Select Something!!</p> : null}
+            <button className={styles.button} onClick={() => handleSelect(place)}>Submit</button>
         </div>
     )
 }
